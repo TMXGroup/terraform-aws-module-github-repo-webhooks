@@ -18,9 +18,6 @@ resource "github_repository_webhook" "default" {
 
   events = var.events
 
-  lifecycle {
-    # This is required for idempotency
-    ignore_changes = configuration.secret
-  }
+
 }
 
