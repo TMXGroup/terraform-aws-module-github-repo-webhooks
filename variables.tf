@@ -21,7 +21,7 @@ variable "github_organization" {
 
 variable "github_repositories" {
   description = "List of repository names which should be associated with the webhook"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -52,6 +52,7 @@ variable "active" {
 variable "events" {
   # Full list of events available here: https://developer.github.com/v3/activity/events/types/
   description = "A list of events which should trigger the webhook."
-  type        = "list"
+  type        = list(string)
   default     = ["issue_comment", "pull_request", "pull_request_review", "pull_request_review_comment"]
 }
+
